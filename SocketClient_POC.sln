@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClient_POC", "SocketClient_POC\SocketClient_POC.csproj", "{A97E3F28-DCD0-4B5D-BCFB-B903C1AB77FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClientWF_POC", "SocketClientWF_POC\SocketClientWF_POC.csproj", "{B1B49154-9046-4D51-9D51-FD3C21167A0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A97E3F28-DCD0-4B5D-BCFB-B903C1AB77FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A97E3F28-DCD0-4B5D-BCFB-B903C1AB77FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A97E3F28-DCD0-4B5D-BCFB-B903C1AB77FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A97E3F28-DCD0-4B5D-BCFB-B903C1AB77FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BB0CD8B-33FA-403A-BA35-194C11801423}
+	EndGlobalSection
+EndGlobal
