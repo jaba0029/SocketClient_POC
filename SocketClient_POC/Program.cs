@@ -26,7 +26,7 @@ namespace csharp_client
                 ws.OnMessage += Ws_OnMessage;
                 
                 ws.Connect();
-                ws.Send("Hello from PCamp!");
+                ws.Send("Hello from Console Client!");
 
                 Console.ReadKey();
             }
