@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using WebSocketSharp;
 using Newtonsoft.Json;
+using System.Security.AccessControl;
 
 namespace csharp_client
 {
@@ -34,8 +35,8 @@ namespace csharp_client
 
         private static void Ws_OnMessage(object sender, MessageEventArgs e)
         {
+            SocketClientWF_POC.CommonData.serverData = e.Data;
             Console.WriteLine("Received from the server: " + e.Data);
-
             try
             {
                 Vector pos = JsonConvert.DeserializeObject<Vector>(e.Data);

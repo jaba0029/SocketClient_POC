@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClient_POC", "SocketC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClientWF_POC", "SocketClientWF_POC\SocketClientWF_POC.csproj", "{B1B49154-9046-4D51-9D51-FD3C21167A0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketClientCommonData", "SocketClientCommonData\SocketClientCommonData.csproj", "{1170E7C3-35BF-4DB8-97F5-8220D633E27D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B49154-9046-4D51-9D51-FD3C21167A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1170E7C3-35BF-4DB8-97F5-8220D633E27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1170E7C3-35BF-4DB8-97F5-8220D633E27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1170E7C3-35BF-4DB8-97F5-8220D633E27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1170E7C3-35BF-4DB8-97F5-8220D633E27D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

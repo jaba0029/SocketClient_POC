@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             listBox1 = new ListBox();
+            button1 = new Button();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(396, 21);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Send";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // listBox1
             // 
@@ -51,22 +41,30 @@
             listBox1.Size = new Size(351, 199);
             listBox1.TabIndex = 2;
             // 
+            // button1
+            // 
+            button1.Location = new Point(382, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 3;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(501, 225);
-            Controls.Add(listBox1);
+            ClientSize = new Size(469, 225);
             Controls.Add(button1);
+            Controls.Add(listBox1);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
         private ListBox listBox1;
+        private Button button1;
     }
 }

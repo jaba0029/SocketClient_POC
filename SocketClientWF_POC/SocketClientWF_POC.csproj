@@ -12,4 +12,8 @@
     <PackageReference Include="WebSocketSharp-NonPreRelease" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SocketClientCommonData\SocketClientCommonData.csproj" />
+  </ItemGroup>
+
 </Project>
