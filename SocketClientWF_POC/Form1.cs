@@ -1,3 +1,5 @@
+using System.Drawing;
+using System;
 using WebSocketSharp;
 namespace SocketClientWF_POC
 {
@@ -9,79 +11,49 @@ namespace SocketClientWF_POC
             InitializeComponent();
         }
 
+        WebSocket ws = new WebSocket("ws://127.0.0.1:7890/Echo");
         private void Form1_Load(object sender, EventArgs e)
         {
-            using (WebSocket ws = new WebSocket("ws://127.0.0.1:7890/EchoAll"))
-            {
-                ws.OnOpen += (sender, e) =>
-                 listBox1.Items.Add(string.Format("Connected to {0} successfully ", "ws://127.0.0.1:7890/EchoAll"));
-                ws.OnError += (sender, e) =>
-                   listBox1.Items.Add("Error: " + e.Message);
-                ws.OnMessage += (sender, e) =>
-                   listBox1.Items.Add("Echo: " + e.Data);
-                ws.OnClose += (sender, e) =>
-                   listBox1.Items.Add(string.Format("Disconnected with {0}", "ws://127.0.0.1:7890/EchoAll"));
-                ws.OnMessage += Ws_OnMessage;
-                ws.Connect();
-                ws.Send("Hello from Windows Form Client!");
-                Thread.Sleep(1000);
-            }
+            ws.OnMessage += Ws_OnMessage;
+            ws.Connect();
+            ws.Send("Hello from Windows Form Client!");
+            Thread.Sleep(1000);
         }
 
-        private static void Ws_OnMessage(object? sender, MessageEventArgs e)
+        private void Ws_OnMessage(object? sender, MessageEventArgs e)
         {
             try
             {
                 CommonData.serverData = e.Data;
-                //MessageBox.Show("Received from the server: " + e.Data);
+                string received = string.IsNullOrEmpty(CommonData.serverData) ? "Error" : CommonData.serverData;
+                Invoke(new MethodInvoker(() =>
+                {
+                    int pColor = int.Parse(received.Replace("Hola Mundo", "").Trim());
+                    listBox1.Items.Add(received);
+                    if ((pColor % 2) == 0)
+                    {
+                      pictureBox1.BackColor = Color.Green;
+                    }
+                    else if ((pColor % 3) ==0)
+                    {
+                        pictureBox1.BackColor = Color.Yellow;
+                    }
+                    else
+                    { pictureBox1.BackColor = Color.Red;
+                    }
+                }));
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("I don't know what to do with \"" + e.Data + "\"");
+                MessageBox.Show("I don't know what to do with \"" + e.Data + "\"");
             }
         }
 
-        private  void Ws_OnMessage1(object? sender, MessageEventArgs e)
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            try
-            {
-                CommonData.serverData = e.Data;
-                textBox1.Text = "";
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("I don't know what to do with \"" + e.Data + "\"");
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (WebSocket ws = new WebSocket("ws://127.0.0.1:7890/EchoAll"))
-            {
-
-                ws.OnMessage += Ws_OnMessage;
-                ws.Connect();
-                ws.Send("Hello from Windows Button Client!");
-                string received = string.IsNullOrEmpty(CommonData.serverData) ? "Error" : CommonData.serverData;
-                listBox1.Items.Add(received);
-                textBox1.Text = "";
-                textBox1.Text = received;
-                //Thread.Sleep(500);
-            }
+            ws.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            using (WebSocket ws = new WebSocket("ws://127.0.0.1:7890/EchoAll"))
-            {
 
-                ws.OnMessage += Ws_OnMessage1;
-                ws.Connect();
-                ws.Send("Hello from Windows Text Client!");
-                string received = string.IsNullOrEmpty(CommonData.serverData) ? "Error" : CommonData.serverData;
-                listBox1.Items.Add(received);
-                textBox1.Text = received;
-                Thread.Sleep(500);
-            }
-        }
     }
 }
